@@ -15,9 +15,7 @@
 		  background: linear-gradient(to right, #FF8C00, #9C9C9C);
 
 		}
-		.navbar{
-			margin-bottom: 20px;
-		}
+		
 		.card-signin {
 		  border: 0;
 		  border-radius: 1rem;

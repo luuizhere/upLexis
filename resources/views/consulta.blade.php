@@ -1,9 +1,9 @@
-@extends('layout.app')
+@extends('layout.app')  
 <div class="card border">
 	<div class="card-body">
 		<h5 class="card-title">Consulta de requisições</h5>
-		<table class="table table-ordered table-hover">
- 				<thead>
+		<table class="table">
+ 				<thead class="thead-dark">
  					<tr>
  						<th>Titulo</th>
  						<th>Link</th>
