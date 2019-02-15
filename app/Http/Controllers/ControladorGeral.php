@@ -34,14 +34,7 @@ class ControladorGeral extends Controller
                 return view('logar');
             } 	
     }
-    public function consultar(){
-        $artigos = Artigo::all();
-        $idusuario = Usuario::all();
-    	return view('consulta',[
-            'artigos' => $artigos, 
-            'usuario' => $idusuario
-        ]);
-    }
+
 
     public function pegaTitulo(Request $request){ 
         $regra = [
@@ -55,7 +48,7 @@ class ControladorGeral extends Controller
             ->where('usuario',$request->user)
             ->get();
             foreach($pegaid as $p){
-                echo $p->id;
+               // echo $p->id;
             } 
         $clearlink = str_replace(" ","+",$request->s); //REPLACE PARA RETIRAR OS ESPAÇOS DA STRING DIGITADA NO INPUT
         $regras = [                     //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
@@ -98,8 +91,16 @@ class ControladorGeral extends Controller
             $inserir->link = $limpalink;
             $inserir->usuario_id = $p->id;
             $inserir->save();
-		}
-        return redirect('consulta'); //Caso consiga encontrar os artigos buscados
+		}  
+        $counttotal = $cnt+$qtdTitulos; //contagem de todos os artigos encontrados
+        echo '<script>alert("Deu tudo certo foram encontrados  artigos!");</script>';
+        //return redirect('consulta'); //Caso consiga encontrar os artigos buscados
+        $artigos = Artigo::all();
+        $idusuario = Usuario::all();
+        return view('consulta',[
+            'artigos' => $artigos, 
+            'usuario' => $idusuario
+        ]);
         }else{
             return redirect('404');  //Caso não consiga.. Redireciona para a view 404
         } 

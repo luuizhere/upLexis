@@ -1,29 +1,30 @@
 @extends('layout.app')  
 @if(isset($loginsave))
 
-	<div class="container">
-		<div class="row">
-			<div class="col-9 col-md-7 mx-auto">
-				<div class="row justify-content-center">
-					<div class="card card-signin my-5">
-						<div class="card-body">
-							<h5 class="card-title text-center">upLexis - Buscar artigos</h5>
-							<div class="form-label-group">
-								<form action="/getArtigos" method="post">
-									@csrf
-										<input type="hidden" name="user" value="{{$loginsave}}" placeholder="Digite sua busca">
-										<input type="text" name="s" class="form-control" placeholder="Digite sua busca" required autofocus>
-		 								<hr>
-										<button class="btn btn-sm btn-primary">Capturar</button>
-								</form>
-								<a href="/consulta" class="btn btn-sm btn-warning">Consultar requisições</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">upLexis - Buscar artigos</h5>
+            <hr>
+            <form class="form-signin" action="/getArtigos" method="post">
+              @csrf
+              <div class="form-label-group">
+              	<input type="hidden" name="user" value="{{$loginsave}}" placeholder="Digite sua busca">
+                <input type="text" name ="s" id="s" class="form-control" placeholder="Digite seu usuario" required autofocus>
+              </div>
+              <hr>
+              <button class="btn btn-sm btn-primary btn-block text-uppercase" type="submit">Buscar Artigos</button>
+            </form>
+            <a href="/consulta" class="btn btn-sm btn-warning btn-block text-uppercase" type="submit">Consultar Artigos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 
 
 @endif

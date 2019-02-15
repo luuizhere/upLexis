@@ -8,7 +8,14 @@ Route::post('/auth', 'ControladorGeral@logar'); // Testa o user e senha
 
 Route::post('/getArtigos','ControladorGeral@pegaTitulo'); // FUncao de buscar os titles e retornar
 
-Route::get('/consulta', 'ControladorGeral@consultar'); // View de consulta
+Route::get('/consulta', function(){
+	$artigos = Artigo::all();
+    $idusuario = Usuario::all();
+    return view('consulta',[
+            'artigos' => $artigos, 
+            'usuario' => $idusuario
+        ]);
+}); // View de consulta
 
 Route::get('/404', function () {
     return view('404');
