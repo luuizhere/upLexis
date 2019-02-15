@@ -17,3 +17,7 @@ Route::get('/404', function () {
 Route::get('/buscar', function () {
     return view('search');
 });
+
+Route::get('/loginteste', function(){
+	return view('logar');
+});

@@ -1,57 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="{{ asset('css/app.css')}}" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('css/app.css')}}">
 	<title></title>
-	<meta name="csrf-token" content="{{ csrf_token() }}">
+</head>
+<body>
 	<style>
-	:root{
+		:root{
 		  --input-padding-x: 1.5rem;
 		  --input-padding-y: .75rem;
 		}
-
-		body {
-		  background: #FF8C00;
-		  background: linear-gradient(to right, #FF8C00, #9C9C9C);
-
-		}
-		.navbar{
-			margin-bottom: 20px;
-		}
-		.card-signin {
-		  border: 0;
-		  border-radius: 1rem;
-		  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-		}
-
-		.card-signin .card-title {
-		  margin-bottom: 2rem;
-		  font-weight: 300;
-		  font-size: 1.5rem;
-		}
-
-		.card-signin .card-body {
-		  padding: 2rem;
-		}
-
-		.form-signin {
-		  width: 100%;
-		}
-
-		.form-signin .btn {
-		  font-size: 80%;
-		  border-radius: 5rem;
-		  letter-spacing: .1rem;
-		  font-weight: bold;
-		  padding: 1rem;
-		  transition: all 0.2s;
-		}
-
-		.form-label-group {
-		  position: relative;
-		  margin-bottom: 1rem;
-		}
-
 		.form-label-group input {
 		  height: auto;
 		  border-radius: 2rem;
@@ -107,13 +65,16 @@
 		  font-size: 12px;
 		  color: #777;
 		}
-
+		body{
+			padding: 70px;
+			background: #FF8C00;
+		  	background: linear-gradient(to right, #FF8C00, #696969);
+		}
+		.navbar{
+			margin-bottom: 20px;
+		}
 	</style>
-</head>
-<body>
 
-
-<script src="{{ asset('js/app.js')}}" type="text/javascript"></script>
-
+<script type="text/javascript" src="{{asset('js/app.js')}}"> </script>
 </body>
 </html>

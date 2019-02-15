@@ -12,7 +12,7 @@
 
 		body {
 		  background: #FF8C00;
-		  background: linear-gradient(to right, #FF8C00, #9C9C9C);
+		  background: linear-gradient(to right, #FF8C00, #696969);
 
 		}
 		

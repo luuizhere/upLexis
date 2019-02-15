@@ -10,7 +10,7 @@ class ControladorGeral extends Controller
 {
     public function index()
     {
-        return view('login');
+        return view('logar');
     }
 
     public function logar(Request $request){
@@ -31,17 +31,12 @@ class ControladorGeral extends Controller
     			return view('search',compact('loginsave'));
     		}else{
                 echo '<script>alert("Nao encontrado usuario!");</script>';
-                return view('login');
-
-            }
-
-    	
+                return view('logar');
+            } 	
     }
     public function consultar(){
-    	//$artigos = Artigo::all()->orderBy('created_at')->get();
         $artigos = Artigo::all();
         $idusuario = Usuario::all();
-        //$artigos = DB::table('artigos')->orderBy('created_at','desc')->get();
     	return view('consulta',[
             'artigos' => $artigos, 
             'usuario' => $idusuario

@@ -11,15 +11,15 @@
  					</tr>
  				</thead>
  				<tbody>
-				@foreach($artigos as $a)
-					<tr>
-	 					<td>{{$a->titulo}}</td>
-	 					<td>{{$a->link}}</td>
-	 					<td>{{$a->usuario->usuario}}</td>
-	 				</tr>
-				@endforeach
+					@foreach($artigos as $a)
+						<tr>
+		 					<td>{{$a->titulo}}</td>
+		 					<td>{{$a->link}}</td>
+		 					<td>{{$a->usuario->usuario}}</td>
+		 				</tr>
+					@endforeach
 				</tbody>
- 			</table>
+ 		</table>
 	</div>
 </div>
 

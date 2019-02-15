@@ -11,6 +11,6 @@ class criarUsuario extends Seeder
      */
     public function run()
     {
-       DB::table('usuarios')->insert(['usuario'=>'admin','senha'=>'admin']);
+       DB::table('usuarios')->insert(['usuario'=>'admin','senha'=>'admin']); // Criar o primeiro usuario, ADMIN
     }
 }
