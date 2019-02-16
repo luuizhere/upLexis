@@ -79,7 +79,9 @@ class ControladorGeral extends Controller
             'usuario' => $idusuario
         ]);
         }else{
-            return redirect('404');  //Caso não consiga.. Redireciona para a view 404
+            $resultados = 1;
+            $request->session()->put('404',$resultados);
+            return redirect('/buscar');
         } 
 
     }

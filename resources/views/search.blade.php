@@ -44,3 +44,8 @@
 
 					</div>
 @endif
+@if(!session()->has('404'))
+  <div class="alert alert-warning">
+    <b>Desculpe, nenhum resultado encontrado.</b>
+  </div>
+@endif

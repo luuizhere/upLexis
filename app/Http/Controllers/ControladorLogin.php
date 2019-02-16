@@ -32,6 +32,8 @@ class ControladorLogin extends Controller
     			//return view('search',compact('loginsave'));
     			$login = ['usuario' => $request->input('login')];
 				$request->session()->put('login',$login);
+                $resultados = 0;
+                $request->session()->put('404',$resultados);
 				//return response("Login ok",200);
 				return view('search');
     		}else{
