@@ -1,5 +1,6 @@
 @extends('layout.app')  
-@if(isset($loginsave))
+
+@if(session()->has('login'))
 
 <body>
   <div class="container">
@@ -12,7 +13,7 @@
             <form class="form-signin" action="/getArtigos" method="post">
               @csrf
               <div class="form-label-group">
-              	<input type="hidden" name="user" value="{{$loginsave}}" placeholder="Digite sua busca">
+              	<input type="hidden" name="user" value="" placeholder="Digite sua busca">
                 <input type="text" name ="s" id="s" class="form-control" placeholder="Digite seu usuario" required autofocus>
               </div>
               <hr>
@@ -26,9 +27,9 @@
   </div>
 </body>
 
-
 @endif
-@if(!isset($loginsave))
+
+@if(!session()->has('login'))
 	<div class="alert alert-danger">
 		<b>Voce precisa estar logado para acessar essa pagina</b>
 	</div>
@@ -42,4 +43,4 @@
 						@endforeach
 
 					</div>
-				@endif
+@endif

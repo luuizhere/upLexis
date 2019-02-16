@@ -29,3 +29,8 @@
     </div>
   </div>
 </body>
+@if(session()->has('loginfail'))
+  <div class="alert alert-danger">
+    <b>Login ou senha invalidas</b>
+  </div>
+@endif

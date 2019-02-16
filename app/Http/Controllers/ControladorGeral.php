@@ -8,35 +8,12 @@ use Illuminate\Support\Facades\DB;
 
 class ControladorGeral extends Controller
 {
-    public function index()
-    {
-        return view('logar');
+    public function __construct(){
+        $this->middleware('checklogin');
     }
-
-    public function logar(Request $request){
-    	$regras = [
-            'login' => 'required',
-            'senha' => 'required'
-        ];
-        $mensagens = [
-            'required' => 'O campo :attribute precisa ser preenchido',
-        ];
-        $request->validate($regras,$mensagens); 
-    		$users = DB::table('usuarios')
-    		->where('usuario',$request->login)
-    		->where('senha',$request->senha)
-    		->get();
-    		if(count($users)>0){
-    			$loginsave = $request->login;
-    			return view('search',compact('loginsave'));
-    		}else{
-                echo '<script>alert("Nao encontrado usuario!");</script>';
-                return view('logar');
-            } 	
-    }
-
-
+         
     public function pegaTitulo(Request $request){ 
+        $user = $request->session()->get('login');
         $regra = [
             's' => 'required',
         ];
@@ -45,11 +22,11 @@ class ControladorGeral extends Controller
         ];
         $request->validate($regra,$mensagen); 
         $pegaid = DB::table('usuarios')
-            ->where('usuario',$request->user)
+            ->where('usuario',$user)
             ->get();
             foreach($pegaid as $p){
-               // echo $p->id;
-            } 
+                //echo $p->id;
+            }
         $clearlink = str_replace(" ","+",$request->s); //REPLACE PARA RETIRAR OS ESPAÇOS DA STRING DIGITADA NO INPUT
         $regras = [                     //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
                 's' => 'required',      //  Regras para o validar do campo //

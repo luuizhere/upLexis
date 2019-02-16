@@ -1,4 +1,6 @@
 @extends('layout.app')  
+@if(session()->has('login'))
+
 <div class="card border">
 	<div class="card-body">
 		<h5 class="card-title">Consulta de requisições</h5>
@@ -23,3 +25,9 @@
 	</div>
 </div>
 
+@endif
+@if(!session()->has('login'))
+	<div class="alert alert-danger">
+		<b>Voce precisa estar logado para acessar essa pagina</b>
+	</div>
+@endif
