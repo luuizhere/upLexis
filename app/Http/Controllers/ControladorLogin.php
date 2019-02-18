@@ -40,7 +40,6 @@ class ControladorLogin extends Controller
     			$login_ok = 1;
                 $request->session()->flush();
                 $request->session()->put('loginfail',$login_ok);
-				//return view('logar');
                 return redirect('/');
             } 	
     }
